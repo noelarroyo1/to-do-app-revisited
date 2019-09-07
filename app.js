@@ -19,7 +19,6 @@ function onReady() {
 
     newLi.textContent = title;
     newLi.className = "mdc-typography--body1";
-    newLi.style.marginRight = "1em;";
     newLi.appendChild(button);
     toDoList.appendChild(newLi);
 
