@@ -9,13 +9,26 @@ function onReady() {
     let title = newToDoText.value;
     let newLi = document.createElement("li");
     let checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
+    let button = document.createElement("button");
+
+    button.className = "mdc-button mdc-button--raised";
+    button.id = "delete";
+    button.textContent = "DELETE";
+    button.style.backgroundColor = "#FF0000";
+    button.style.margin = "5px 15px";
 
     newLi.textContent = title;
-    newLi.appendChild(checkbox);
+    newLi.className = "mdc-typography--body1";
+    newLi.style.marginRight = "1em;";
+    newLi.appendChild(button);
     toDoList.appendChild(newLi);
 
     newToDoText.value = "";
+  });
+
+  toDoList.addEventListener("click", element => {
+    var element = document.querySelector("li");
+    element.parentNode.removeChild(element);
   });
 }
 
