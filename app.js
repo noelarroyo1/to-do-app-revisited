@@ -2,9 +2,20 @@ function onReady() {
   const addToDoForm = document.getElementById("addToDoForm");
   const newToDoText = document.getElementById("newToDoText");
   const toDoList = document.getElementById("toDoList");
+  const toDos = [];
+
+  function createNewToDo() {
+    const newToDoText = document.getElementById("newToDoText");
+    toDos.push({
+      title: newToDoText.value,
+      complete: false
+    });
+    newToDoText.value = "";
+  }
 
   addToDoForm.addEventListener("submit", event => {
     event.preventDefault();
+    createNewToDo();
 
     let title = newToDoText.value;
     let newLi = document.createElement("li");
@@ -31,6 +42,8 @@ function onReady() {
       newLi.parentNode.removeChild(newLi);
     });
   });
+
+  renderTheUI();
 }
 
 window.onload = function() {
