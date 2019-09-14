@@ -1,3 +1,3 @@
 # TO DO APP REVISITED
 
-This is simple to do app.
+This is a simple to do app using HTML, CSS, JavaScript, and JQuery.
